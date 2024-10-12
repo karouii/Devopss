@@ -26,13 +26,13 @@ public class BlocServiceImplMockTest {
     BlocServiceImpl blocService;
 
     Bloc bloc = new Bloc(1, "info", 12, null, null);
-    List<Bloc> blocList = new ArrayList<Bloc>() {
-        {
+    List<Bloc> blocList = new ArrayList<>();
+    {
             blocList.add(new Bloc(2, "physique", 12, null, null));
             blocList.add(new Bloc(3, "Bloc Z", 120, null, null));
 
         }
-    };
+
     @Test
     public void testRetrieveBloc(){
         Mockito.when(blocRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(bloc));
